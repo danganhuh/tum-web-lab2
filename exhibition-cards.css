@@ -4,7 +4,7 @@
 	overflow-x:auto;
 	scroll-snap-type:x proximity;
 	gap:1rem;
-	padding-bottom:.4rem;
+	padding-bottom:.95rem;
 }
 
 .exhibitions__grid::-webkit-scrollbar{
