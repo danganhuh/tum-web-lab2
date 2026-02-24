@@ -1,20 +1,27 @@
 <!doctype html>
-<html>
+<html lang="ro">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Museul de Istorie si Etnografie din Balti</title>
+    <title>Muzeul de Istorie și Etnografie din Bălți</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+  </head>
   <body>
     <header class="site-header">
       <div class="container header__inner">
-        <a class="logo" href="#">Muzeum Bălți</a>
-        <nav class="nav" aria-label="Primary">
+        <a class="logo" href="#" aria-label="Muzeul de Istorie și Etnografie din Bălți">
+          <img class="logo__img" src="logo/logo.png" alt="Logo Muzeul de Istorie și Etnografie din Bălți" />
+          <span class="logo__text">Muzeul de Istorie și Etnografie din Bălți</span>
+        </a>
+        <nav class="nav" aria-label="Navigare Principală">
           <ul class="nav__list">
-            <li><a href="#exhibitions">Exhibitions</a></li>
-            <li><a href="#visit">Visit</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#exponatele">Exponate</a></li>
+            <li><a href="#vizite">Vizite</a></li>
+            <li><a href="#despre">Despre noi</a></li>
           </ul>
         </nav>
       </div>
@@ -22,27 +29,28 @@
 
     <main>
       <section class="hero">
+        <video class="hero__bg" autoplay muted loop playsinline preload="metadata" poster="images/museum.jpg" aria-hidden="true" tabindex="-1">
+          <source src="video/Video Project.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__overlay" aria-hidden="true"></div>
+
         <div class="hero__content container">
+
           <h1 class="hero__title">
             <span class="hero__title--decor">Muzeul de Istorie și Etnografie</span>
-            <span class="hero__title--place">din Bălți</span>
           </h1>
-          <p class="hero__tagline">Păstrează trecutul, inspiră viitorul.</p>
-          <p class="hero__subtitle">Discover stories, artifacts, and interactive exhibits that bring our city's past to life.</p>
 
-          <div class="hero__featured" aria-hidden="false">
-            <span class="featured__label">Featured exhibition</span>
-            <strong class="featured__title">"Roots of the City" — Folk Art & Daily Life</strong>
-          </div>
+          <p class="hero__subtitle">Descoperiți povești, artefacte și expoziții interactive care readuc la viață trecutul municipiului Bălți.</p>
+
+          <!-- <div class="hero__featured" aria-hidden="false">
+            <span class="featured__label">Expoziție în prim plan</span>
+            <strong class="featured__title">"Vernisaj de expoziție - Madona din Ordășei"</strong>
+          </div> -->
 
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#tickets">Buy Tickets</a>
-            <a class="btn" href="#exhibitions">Explore Exhibitions</a>
+            <a class="btn btn--primary" href="#exponatele">Explorează expozițiile noastre</a>
+            <a class="btn btn--ghost" href="#vizite">Planifică vizita ta</a>
           </div>
-        </div>
-
-        <div class="hero__media">
-          <img class="hero__image" src="images/museum.jpg" alt="Photo of Muzeum de istorie si Etnografie din Balti" />
         </div>
       </section>
     </main>
@@ -52,6 +60,18 @@
         <small>© Muzeul de Istorie și Etnografie din Bălți</small>
       </div>
     </footer>
-  </body>
+  <div class="hero__actions">
+            <a class="btn btn--primary" href="#exponatele">Explorează expozițiile noastre</a>
+            <a class="btn btn--ghost" href="#vizite">Planifică vizita ta</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© Muzeul de Istorie și Etnografie din Bălți</small>
+      </div>
+    </footer>
   </body>
 </html>
