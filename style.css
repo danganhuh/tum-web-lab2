@@ -142,6 +142,7 @@ html,body{height:100%;margin:0;font-family:"Manrope", system-ui, -apple-system, 
 
 /* Exhibitions */
 .exhibitions{margin-top:2rem;padding:3rem 0;background:#f6efe4}
+.exhibitions__heading{margin:0}
 .exhibitions__title{margin:0;font-size:clamp(1.45rem,2.3vw,2rem);font-weight:800;color:#1f1a15}
 .exhibitions__intro{margin:.7rem 0 1.6rem;color:#5e5650;max-width:62ch;line-height:1.55}
 
