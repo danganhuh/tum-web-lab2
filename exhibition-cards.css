@@ -2,19 +2,29 @@
 .exhibitions__grid{
 	display:flex;
 	overflow-x:auto;
+	scroll-behavior:smooth;
 	scroll-snap-type:x proximity;
 	gap:1rem;
-	padding-bottom:.4rem;
+	padding-bottom:.75rem;
+	scrollbar-width:auto;
+	scrollbar-color:rgba(31,26,21,.3) transparent;
 }
 
 .exhibitions__grid::-webkit-scrollbar{
-	height:8px;
+	height:20px;
+}
+
+.exhibitions__grid::-webkit-scrollbar-track{
+	background:transparent;
+	border-radius:999px;
 }
 
 .exhibitions__grid::-webkit-scrollbar-thumb{
-	background:rgba(31,26,21,.22);
+	background:rgba(31,26,21,.24);
 	border-radius:999px;
 }
+
+.exhibitions__grid::-webkit-scrollbar-thumb:hover{background:rgba(31,26,21,.34)}
 
 .exhibition-card{
 	display:flex;
