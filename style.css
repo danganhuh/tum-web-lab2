@@ -142,10 +142,10 @@ html,body{height:100%;margin:0;font-family:"Manrope", system-ui, -apple-system, 
 }
 
 /* Exhibitions */
-.exhibitions{margin-top:2rem;padding:5rem 0;background:#f6efe4}
+.exhibitions{padding:5rem 0;background:#efe4d3}
 .exhibitions__heading{margin:0 0 2.5rem}
 .exhibitions__title{margin:0;font-size:clamp(1.45rem,2.3vw,2rem);font-weight:800;color:#1f1a15}
-.exhibitions__intro{margin:1rem 0 0;color:#5e5650;max-width:62ch;line-height:1.65}
+.exhibitions__intro{margin:1rem 0 0;color:#5e5650;line-height:1.65;text-align:justify;text-justify:inter-word}
 
 /* Visits */
 .visits{padding:4rem 0;background:#efe4d3}
@@ -160,6 +160,11 @@ html,body{height:100%;margin:0;font-family:"Manrope", system-ui, -apple-system, 
 .visits__field input,
 .visits__field select,
 .visits__field textarea{width:100%;padding:.62rem .72rem;border:1px solid rgba(31,26,21,.2);border-radius:8px;font:inherit;color:#1f1a15;background:#fff}
+.visits__field input::placeholder,
+.visits__field textarea::placeholder{color:#6b6b6b;opacity:1}
+.visits__field select:invalid{color:#6b6b6b}
+.visits__field select option{color:#1f1a15}
+.visits__field select option[value=""]{color:#6b6b6b}
 .visits__field input:focus,
 .visits__field select:focus,
 .visits__field textarea:focus{outline:3px solid rgba(31,26,21,.18);outline-offset:1px;border-color:rgba(31,26,21,.4)}

@@ -21,7 +21,7 @@
         </a>
         <nav class="nav" aria-label="Navigare Principală">
           <ul class="nav__list">
-            <li><a href="#exponatele">Exponate</a></li>
+            <li><a href="#exponatele">Expoziții</a></li>
             <li><a href="#vizite">Vizite</a></li>
             <li><a href="#despre">Despre noi</a></li>
           </ul>
@@ -131,12 +131,12 @@
         <div class="container visits__inner">
           <div class="visits__content">
             <h2 class="visits__title" id="visits-title">Planifică vizita ta</h2>
-            <p class="visits__text">Completează formularul de mai jos, iar echipa muzeului te va contacta pentru confirmarea detaliilor vizitei de grup.</p>
+            <p class="visits__text">Completează formularul de alături, iar echipa muzeului te va contacta pentru confirmarea detaliilor vizitei.</p>
           </div>
 
-          <form class="visits__form" action="#vizite" method="post">
+          <form class="visits__form" action="" method="post">
             <div class="visits__field">
-              <label for="visitor-name">Nume și prenume</label>
+              <label for="visitor-name">Nume și prenume vizitator/organizator</label>
               <input id="visitor-name" name="visitor-name" type="text" required />
             </div>
 
@@ -176,7 +176,7 @@
               <textarea id="visit-message" name="visit-message" rows="4" placeholder="Menționează expoziția preferată sau alte detalii utile."></textarea>
             </div>
 
-            <button class="btn btn--primary visits__submit" type="submit">Trimite cererea de vizită</button>
+            <button class="btn btn--primary visits__submit" type="submit">Trimite</button>
           </form>
         </div>
       </section>
@@ -187,5 +187,18 @@
         <small>© Muzeul de Istorie și Etnografie din Bălți</small>
       </div>
     </footer>
+
+    <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      window.addEventListener("load", function () {
+        if (window.location.hash) {
+          history.replaceState(null, "", window.location.pathname + window.location.search);
+        }
+        window.scrollTo(0, 0);
+      });
+    </script>
   </body>
 </html>
