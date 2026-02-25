@@ -8,6 +8,7 @@
 }
 
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 html,body{height:100%;margin:0;font-family:"Manrope", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:var(--color-ink);background:var(--color-bg)}
 
 .container{max-width:var(--container-width);margin:0 auto;padding:0 1rem}
@@ -146,6 +147,22 @@ html,body{height:100%;margin:0;font-family:"Manrope", system-ui, -apple-system, 
 .exhibitions__title{margin:0;font-size:clamp(1.45rem,2.3vw,2rem);font-weight:800;color:#1f1a15}
 .exhibitions__intro{margin:1rem 0 0;color:#5e5650;max-width:62ch;line-height:1.65}
 
+/* Visits */
+.visits{padding:4rem 0;background:#efe4d3}
+.visits__inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem;align-items:start}
+.visits__content{max-width:62ch}
+.visits__title{margin:0;font-size:clamp(1.35rem,2.1vw,1.85rem);font-weight:800;color:#1f1a15}
+.visits__text{margin:.85rem 0 0;color:#5e5650;max-width:64ch;line-height:1.65}
+.visits__form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem;background:#fff;padding:1rem;border:1px solid rgba(31,26,21,.12);border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.08)}
+.visits__field{display:flex;flex-direction:column;gap:.35rem;grid-column:1 / -1}
+.visits__field--half{grid-column:auto}
+.visits__field label{font-size:.86rem;font-weight:700;color:#1f1a15}
+.visits__field input,
+.visits__field textarea{width:100%;padding:.62rem .72rem;border:1px solid rgba(31,26,21,.2);border-radius:8px;font:inherit;color:#1f1a15;background:#fff}
+.visits__field input:focus,
+.visits__field textarea:focus{outline:3px solid rgba(31,26,21,.18);outline-offset:1px;border-color:rgba(31,26,21,.4)}
+.visits__submit{justify-self:start}
+
 /* Footer */
 .site-footer{padding:2rem 0;color:var(--color-muted);text-align:center}
 
@@ -159,6 +176,9 @@ html,body{height:100%;margin:0;font-family:"Manrope", system-ui, -apple-system, 
 	.hero__content.container{padding-top:4rem;padding-bottom:2.4rem}
 	.hero__meta{grid-template-columns:repeat(3,minmax(0,1fr))}
 	.hero__title--decor{font-size:clamp(2rem,6vw,3.2rem)}
+	.visits__inner{grid-template-columns:1fr}
+	.visits__form{grid-template-columns:1fr}
+	.visits__field--half{grid-column:1 / -1}
 }
 
 @media (max-width:480px){

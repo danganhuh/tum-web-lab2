@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="exhibition-cards.css" />
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header" id="top">
       <div class="container header__inner">
-        <a class="logo" href="#" aria-label="Muzeul de Istorie și Etnografie din Bălți">
+        <a class="logo" href="#top" aria-label="Muzeul de Istorie și Etnografie din Bălți">
           <img class="logo__img" src="logo/logo.png" alt="Logo Muzeul de Istorie și Etnografie din Bălți" />
           <span class="logo__text">Muzeul de Istorie și Etnografie din Bălți</span>
         </a>
@@ -59,7 +59,7 @@
           </div>
 
           <div class="exhibitions__grid">
-          <a class="exhibition-card" href="#" aria-label="Detalii expoziție: Tradiții și meșteșuguri">
+          <a class="exhibition-card" href="#despre" aria-label="Detalii expoziție: Tradiții și meșteșuguri">
               <img src="images/expozitii/madona1_expo.jpg" alt="Expoziție viitoare despre tradiții și meșteșuguri" />
               <div class="exhibition-card__content">
                 <!-- <span class="exhibition-card__status">Viitoare</span> -->
@@ -69,7 +69,7 @@
               </div>
             </a>
 
-          <a class="exhibition-card" href="#" aria-label="Detalii expoziție: Deportarile sovietice din 1940">
+          <a class="exhibition-card" href="#vizite" aria-label="Detalii expoziție: Deportarile sovietice din 1940">
               <img src="images/expozitii/exhib.jpg" alt="Expoziție temporară de patrimoniu local" />
               <div class="exhibition-card__content">
                 <!-- <span class="exhibition-card__status">Curentă</span> -->
@@ -80,7 +80,7 @@
             </a>
 
           
-            <a class="exhibition-card" href="#" aria-label="Detalii expoziție: Istoria urbană a Bălțiului">
+            <a class="exhibition-card" href="#vizite" aria-label="Detalii expoziție: Istoria urbană a Bălțiului">
               <img src="images/expozitii/urbanism_expo.jpg" alt="Expoziție despre istoria urbană a municipiului Bălți" />
               <div class="exhibition-card__content">
                 <!-- <span class="exhibition-card__status">Curentă</span> -->
@@ -90,7 +90,7 @@
               </div>
             </a>
 
-            <a class="exhibition-card" href="#" aria-label="Detalii expoziție: Epoca modernă">
+            <a class="exhibition-card" href="#despre" aria-label="Detalii expoziție: Epoca modernă">
               <img src="images/expozitii/epoca_moderna_expo.jpg" alt="Expoziție foto de patrimoniu și etnografie" />
               <div class="exhibition-card__content">
                 <!-- <span class="exhibition-card__status">Viitoare</span> -->
@@ -124,6 +124,49 @@
             <p class="mission__text">Muzeul de Istorie și Etnografie din Bălți are misiunea de a conserva, cerceta și valorifica patrimoniul cultural al regiunii de nord, în special a municipiului Bălți. Prin expoziții, activități educaționale și proiecte comunitare, conectăm trecutul cu prezentul într-un mod accesibil tuturor generațiilor.</p>
             <p class="mission__text">În ultimii ani, muzeul s-a implicat în proiecte moderne, precum digitalizarea patrimoniului și expoziții internaționale, inclusiv colaborări cu specialiști din Republica Cehă pentru prezentarea descoperirilor arheologice rare.</p>
           </div>
+        </div>
+      </section>
+
+      <section class="visits" id="vizite" aria-labelledby="visits-title">
+        <div class="container visits__inner">
+          <div class="visits__content">
+            <h2 class="visits__title" id="visits-title">Planifică vizita ta</h2>
+            <p class="visits__text">Completează formularul de mai jos, iar echipa muzeului te va contacta pentru confirmarea detaliilor vizitei de grup.</p>
+          </div>
+
+          <form class="visits__form" action="#vizite" method="post">
+            <div class="visits__field">
+              <label for="visitor-name">Nume și prenume</label>
+              <input id="visitor-name" name="visitor-name" type="text" required />
+            </div>
+
+            <div class="visits__field visits__field--half">
+              <label for="visitor-email">Email</label>
+              <input id="visitor-email" name="visitor-email" type="email" required />
+            </div>
+
+            <div class="visits__field visits__field--half">
+              <label for="visitor-phone">Telefon</label>
+              <input id="visitor-phone" name="visitor-phone" type="tel" required />
+            </div>
+
+            <div class="visits__field visits__field--half">
+              <label for="visit-date">Data dorită</label>
+              <input id="visit-date" name="visit-date" type="date" required />
+            </div>
+
+            <div class="visits__field visits__field--half">
+              <label for="group-size">Număr de vizitatori</label>
+              <input id="group-size" name="group-size" type="number" min="1" required />
+            </div>
+
+            <div class="visits__field">
+              <label for="visit-message">Mesaj</label>
+              <textarea id="visit-message" name="visit-message" rows="4" placeholder="Menționează expoziția preferată sau alte detalii utile."></textarea>
+            </div>
+
+            <button class="btn btn--primary visits__submit" type="submit">Trimite cererea de vizită</button>
+          </form>
         </div>
       </section>
     </main>
