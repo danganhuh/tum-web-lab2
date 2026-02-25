@@ -158,8 +158,10 @@ html,body{height:100%;margin:0;font-family:"Manrope", system-ui, -apple-system, 
 .visits__field--half{grid-column:auto}
 .visits__field label{font-size:.86rem;font-weight:700;color:#1f1a15}
 .visits__field input,
+.visits__field select,
 .visits__field textarea{width:100%;padding:.62rem .72rem;border:1px solid rgba(31,26,21,.2);border-radius:8px;font:inherit;color:#1f1a15;background:#fff}
 .visits__field input:focus,
+.visits__field select:focus,
 .visits__field textarea:focus{outline:3px solid rgba(31,26,21,.18);outline-offset:1px;border-color:rgba(31,26,21,.4)}
 .visits__submit{justify-self:start}
 
