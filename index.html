@@ -19,6 +19,7 @@
           <img class="logo__img" src="logo/logo.png" alt="Logo Muzeul de Istorie și Etnografie din Bălți" />
           <span class="logo__text">Muzeul de Istorie și Etnografie din Bălți</span>
         </a>
+        <a class="nav-jump" href="#exponatele" aria-label="Mergi la expoziții">&lt;</a>
         <nav class="nav" aria-label="Navigare Principală">
           <ul class="nav__list">
             <li><a href="#exponatele">Expoziții</a></li>
@@ -53,8 +54,8 @@
 
       <section class="mobile-only-spotlight" aria-labelledby="mobile-spotlight-title">
         <div class="container">
-          <h2 class="mobile-only-spotlight__title" id="mobile-spotlight-title">Plan rapid de vizită</h2>
-          <p class="mobile-only-spotlight__text">Pe mobil, poți ajunge rapid la secțiunile importante și poți rezerva vizita dintr-un singur tap.</p>
+          <h2 class="mobile-only-spotlight__title" id="mobile-spotlight-title">Plan de vizită</h2>
+          <p class="mobile-only-spotlight__text">Cu ajutorul telefonului mobil, poți ajunge rapid la secțiunile importante și poți rezerva vizita dintr-un singur tap.</p>
           <img class="mobile-only-spotlight__image" src="images/muzeografi/excursie_1.jpg" alt="Vizitatori în muzeu" />
           <a class="btn btn--ghost mobile-only-spotlight__link" href="#gasesti">Vezi locația pe hartă</a>
         </div>
@@ -227,7 +228,7 @@
     </main>
 
     <div class="mobile-cta" aria-label="Acțiune rapidă mobil">
-      <a class="btn btn--primary" href="#vizite">Rezervă vizita</a>
+      <a class="btn btn--primary" id="mobile-main-cta" href="#exponatele">Explorează expozițiile</a>
     </div>
 
     <footer class="site-footer">
@@ -255,6 +256,34 @@
         }
         window.scrollTo(0, 0);
       });
+
+      (function () {
+        const mobileMainCta = document.getElementById("mobile-main-cta");
+
+        if (mobileMainCta) {
+          let goToVisitsNext = false;
+
+          mobileMainCta.addEventListener("click", function (event) {
+            if (!window.matchMedia("(max-width: 768px)").matches) {
+              return;
+            }
+
+            event.preventDefault();
+
+            if (goToVisitsNext) {
+              window.location.hash = "vizite";
+              mobileMainCta.textContent = "Explorează expozițiile";
+              mobileMainCta.setAttribute("href", "#exponatele");
+            } else {
+              window.location.hash = "exponatele";
+              mobileMainCta.textContent = "Rezervă vizita";
+              mobileMainCta.setAttribute("href", "#vizite");
+            }
+
+            goToVisitsNext = !goToVisitsNext;
+          });
+        }
+      })();
     </script>
   </body>
 </html>

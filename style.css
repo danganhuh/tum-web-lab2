@@ -19,6 +19,7 @@ html,body{height:100%;margin:0;font-family:"Manrope", system-ui, -apple-system, 
 .logo{display:inline-flex;align-items:center;gap:.65rem;font-weight:700;color:#1f1a15;text-decoration:none;font-size:1.03rem;letter-spacing:.02em}
 .logo__img{height:38px;width:auto;display:block;object-fit:contain;mix-blend-mode:multiply}
 .logo__text{line-height:1}
+.nav-jump{display:none}
 .nav__list{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
 .nav__list a{color:rgba(31,26,21,.88);text-decoration:none;padding:0.2rem 0.3rem;border-bottom:1px solid transparent;transition:color .2s ease,border-color .2s ease}
 .nav__list a:hover{color:#000;border-bottom-color:rgba(31,26,21,.62)}
@@ -216,19 +217,18 @@ html,body{height:100%;margin:0;font-family:"Manrope", system-ui, -apple-system, 
 }
 
 @media (max-width:480px){
-	.header__inner{flex-direction:column;align-items:flex-start;gap:.55rem}
-	.nav{width:100%}
-	.nav__list{display:flex;flex-wrap:wrap;gap:.45rem .8rem}
-	.nav__list a{font-size:.9rem;padding:.14rem 0}
+	.site-header{position:relative;z-index:50}
+	.header__inner{align-items:center;gap:.55rem}
+	.nav{display:none}
+	.nav-jump{display:inline-flex;position:fixed;top:.85rem;right:.9rem;width:36px;height:36px;align-items:center;justify-content:center;border-radius:999px;border:1px solid rgba(31,26,21,.22);background:#fff;color:#1f1a15;text-decoration:none;font-size:1.2rem;font-weight:800;line-height:1;z-index:46}
 	.logo{font-size:.97rem;gap:.5rem}
 	.logo__img{height:32px}
 	.hero{min-height:88vh}
-	.hero__content.container{padding-top:3.8rem;padding-bottom:2rem}
+	.hero__content.container{padding-top:5.1rem;padding-bottom:2rem}
 	.hero__title--decor{font-size:1.86rem}
 	.hero__title--place{font-size:1rem}
 	.hero__subtitle{font-size:.94rem}
-	.hero__actions{flex-direction:column;align-items:stretch}
-	.hero__actions .btn{text-align:center;width:100%}
+	.hero__actions{display:none}
 	.hero__meta{grid-template-columns:1fr}
 	.hero__meta li{min-height:68px}
 }
@@ -241,7 +241,7 @@ html,body{height:100%;margin:0;font-family:"Manrope", system-ui, -apple-system, 
 	.mobile-only-spotlight__text{margin:0;color:#5e5650;line-height:1.55;font-size:.94rem}
 	.mobile-only-spotlight__image{width:100%;max-height:170px;object-fit:cover;border-radius:10px;border:1px solid rgba(31,26,21,.12)}
 	.mobile-only-spotlight__link{justify-self:start;padding:.6rem 1rem}
-	.mobile-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:35;padding:.6rem .9rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(250,247,242,.96);border-top:1px solid rgba(31,26,21,.12)}
+	.mobile-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:.6rem .9rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(250,247,242,.96);border-top:1px solid rgba(31,26,21,.12)}
 	.mobile-cta .btn{display:block;width:100%;text-align:center;padding:.82rem 1rem}
 }
 
