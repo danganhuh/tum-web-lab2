@@ -19,6 +19,7 @@
           <img class="logo__img" src="logo/logo.png" alt="Logo Muzeul de Istorie și Etnografie din Bălți" />
           <span class="logo__text">Muzeul de Istorie și Etnografie din Bălți</span>
         </a>
+        <button class="nav-jump" type="button" aria-expanded="false" aria-controls="mobile-nav-jump-menu" aria-label="Deschide navigarea mobil">&lt;</button>
         <nav class="nav" aria-label="Navigare Principală">
           <ul class="nav__list">
             <li><a href="#exponatele">Expoziții</a></li>
@@ -26,6 +27,12 @@
             <li><a href="#despre">Despre noi</a></li>
           </ul>
         </nav>
+        <div class="nav-jump-menu" id="mobile-nav-jump-menu" aria-label="Navigare rapidă mobil">
+          <a href="#exponatele">Expoziții</a>
+          <a href="#despre">Despre noi</a>
+          <a href="#vizite">Rezervă vizita</a>
+          <a href="#gasesti">Locație</a>
+        </div>
       </div>
     </header>
 
@@ -134,7 +141,14 @@
             <p class="visits__text">Completează formularul de alături, iar echipa muzeului te va contacta pentru confirmarea detaliilor vizitei.</p>
           </div>
 
-          <form class="visits__form" action="" method="post">
+          <section class="mobile-only-spotlight" aria-labelledby="mobile-spotlight-title">
+            <!-- <h2 class="mobile-only-spotlight__title" id="mobile-spotlight-title">Plan de vizită</h2> -->
+            <p class="mobile-only-spotlight__text">Cu ajutorul telefonului mobil, poți ajunge rapid la secțiunile importante și poți rezerva vizita dintr-un singur tap.</p>
+            <img class="mobile-only-spotlight__image" src="images/muzeografi/excursie_1.jpg" alt="Vizitatori în muzeu" />
+            <!-- <a class="btn btn--ghost mobile-only-spotlight__link" href="#gasesti">Vezi locația pe hartă</a> -->
+          </section>
+
+          <form class="visits__form" id="visit-form" action="" method="post">
             <div class="visits__field">
               <label for="visitor-name">Nume și prenume vizitator/organizator</label>
               <input id="visitor-name" name="visitor-name" type="text" required />
@@ -178,6 +192,7 @@
 
             <button class="btn btn--primary visits__submit" type="submit">Trimite</button>
           </form>
+
         </div>
       </section>
 
@@ -217,6 +232,10 @@
       </section>
     </main>
 
+    <div class="mobile-cta" aria-label="Acțiune rapidă mobil">
+      <a class="btn btn--primary" id="mobile-main-cta" href="#visit-form">Rezervă vizita</a>
+    </div>
+
     <footer class="site-footer">
       <div class="container">
         <small>© Muzeul de Istorie și Etnografie din Bălți</small>
@@ -231,17 +250,5 @@
       </div>
     </footer>
 
-    <script>
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-      }
-
-      window.addEventListener("load", function () {
-        if (window.location.hash) {
-          history.replaceState(null, "", window.location.pathname + window.location.search);
-        }
-        window.scrollTo(0, 0);
-      });
-    </script>
   </body>
 </html>
