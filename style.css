@@ -150,7 +150,7 @@ html,body{height:100%;margin:0;font-family:"Manrope", system-ui, -apple-system, 
 .exhibitions__intro{margin:1rem 0 0;color:#5e5650;line-height:1.65;text-align:justify;text-justify:inter-word}
 
 /* Visits */
-.visits{padding:4rem 0;background:#efe4d3}
+.visits{padding:4rem 0;background:#efe4d3;--visits-text-left:max(.9rem, calc((100vw - var(--container-width))/2 + 1rem))}
 .visits__inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem;align-items:start}
 .visits__content{max-width:62ch}
 .visits__title{margin:0;font-size:clamp(1.35rem,2.1vw,1.85rem);font-weight:800;color:#1f1a15}
@@ -171,6 +171,36 @@ html,body{height:100%;margin:0;font-family:"Manrope", system-ui, -apple-system, 
 .visits__field select:focus,
 .visits__field textarea:focus{outline:3px solid rgba(31,26,21,.18);outline-offset:1px;border-color:rgba(31,26,21,.4)}
 .visits__submit{justify-self:start}
+
+/* Decorative exhibits */
+.mission,.visits{position:relative;overflow:hidden}
+.floating-exponat{position:absolute;z-index:3;max-width:170px;opacity:0;transform:translateY(14px) scale(.92);animation:exponatReveal 1.2s ease forwards}
+.floating-exponat img{display:block;width:100%;height:auto;border-radius:0;border:0;box-shadow:none;background:transparent}
+.floating-exponat figcaption{margin:0;position:absolute;left:calc(100% + .55rem);top:50%;transform:translateY(-50%) translateX(-6px);padding:.45rem .55rem;min-width:230px;font-size:.78rem;line-height:1.35;color:#fff;background:rgba(31,26,21,.9);border-radius:7px;opacity:0;pointer-events:none;transition:opacity .24s ease,transform .24s ease}
+.floating-exponat--coin{bottom:1rem;left:var(--visits-text-left);max-width:220px;animation-delay:.9s}
+.floating-exponat--earrings{top:12.4rem;left:calc(var(--visits-text-left) + 7rem);max-width:240px;animation-delay:1.35s}
+.moneda_anim img{animation:coinTilt 26s ease-in-out infinite}
+.cercei_anim img{animation:earringTilt 18s ease-in-out infinite}
+
+@keyframes exponatReveal{
+	to{opacity:.95;transform:translateY(0) scale(1)}
+}
+
+@keyframes coinTilt{
+	0%,100%{transform:rotate(-3deg)}
+	50%{transform:rotate(3deg)}
+}
+
+@keyframes earringTilt{
+	0%,100%{transform:rotate(-4deg)}
+	50%{transform:rotate(4deg)}
+}
+
+@media (hover:hover) and (pointer:fine) and (min-width:901px){
+	.floating-exponat{pointer-events:auto}
+	.floating-exponat:hover figcaption,
+	.floating-exponat:focus-within figcaption{opacity:1;transform:translateY(-50%) translateX(0)}
+}
 
 /* Find us */
 .find-us{padding:4rem 0;background:#f6efe4}
@@ -208,6 +238,7 @@ html,body{height:100%;margin:0;font-family:"Manrope", system-ui, -apple-system, 
 	.hero__meta{grid-template-columns:repeat(3,minmax(0,1fr))}
 	.hero__title--decor{font-size:clamp(2rem,6vw,3.2rem)}
 	.exhibitions,.mission,.visits,.find-us{padding:3.2rem 0}
+	.floating-exponat{display:none}
 	.visits__inner{grid-template-columns:1fr}
 	.visits__form{grid-template-columns:1fr}
 	.visits__field--half{grid-column:1 / -1}
