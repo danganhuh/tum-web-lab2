@@ -124,13 +124,30 @@
           transform: rotate(4deg);
         }
       }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-pan {
+          animation: none;
+        }
+
+        .mission-slide {
+          animation: none;
+          opacity: 1;
+        }
+
+        .exponat-reveal {
+          animation: none;
+          opacity: 1;
+          transform: none;
+        }
+      }
     </style>
   </head>
-  <body class="min-h-screen bg-museum-bg font-sans text-museum-ink antialiased">
+  <body class="min-h-screen bg-museum-bg pb-24 font-sans text-museum-ink antialiased md:pb-0">
     <header class="sticky top-0 z-20 w-full border-b border-black/10 bg-museum-sand/95 backdrop-blur" id="top">
-      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:py-4">
         <a class="flex items-center gap-3 text-[1.03rem] font-bold tracking-[0.02em] text-[#1f1a15]" href="#top" aria-label="Muzeul de Istorie și Etnografie din Bălți">
-          <img class="h-9 w-auto object-contain mix-blend-multiply" src="logo/logo.png" alt="Logo Muzeul de Istorie și Etnografie din Bălți" />
+          <img class="h-9 w-auto object-contain mix-blend-multiply" src="logo/logo.png" alt="Logo Muzeul de Istorie și Etnografie din Bălți" decoding="async" fetchpriority="high" />
           <span class="leading-tight">Muzeul de Istorie și Etnografie din Bălți</span>
         </a>
         <nav class="hidden md:block" aria-label="Navigare Principală">
@@ -146,7 +163,7 @@
               <span aria-hidden="true">☰</span>
               <span class="sr-only">Deschide navigarea mobil</span>
             </summary>
-            <div class="absolute right-0 mt-2 w-48 rounded-xl border border-[#1f1a15]/15 bg-white p-2 shadow-xl">
+            <div class="absolute right-0 mt-2 w-48 origin-top-right rounded-xl border border-[#1f1a15]/15 bg-white p-2 shadow-xl opacity-0 scale-95 transition duration-200 group-open:opacity-100 group-open:scale-100">
               <a class="block rounded-lg px-3 py-2 text-sm font-semibold text-[#1f1a15] hover:bg-museum-cream" href="#exponatele">Expoziții</a>
               <a class="block rounded-lg px-3 py-2 text-sm font-semibold text-[#1f1a15] hover:bg-museum-cream" href="#despre">Despre noi</a>
               <a class="block rounded-lg px-3 py-2 text-sm font-semibold text-[#1f1a15] hover:bg-museum-cream" href="#vizite">Rezervă vizita</a>
@@ -158,20 +175,21 @@
     </header>
 
     <main>
-      <section class="relative flex min-h-screen items-center overflow-hidden">
-        <video class="hero-pan absolute inset-0 h-full w-full -translate-y-12 scale-110 object-cover object-center brightness-[0.72] saturate-50 contrast-95" autoplay muted loop playsinline preload="metadata" poster="images/museum.jpg" aria-hidden="true" tabindex="-1">
+      <section class="relative flex min-h-[85vh] items-center overflow-hidden sm:min-h-screen">
+        <img class="absolute inset-0 h-full w-full object-cover object-center brightness-[0.72] saturate-50 contrast-95 sm:hidden" src="images/museum.jpg" alt="Muzeul de Istorie și Etnografie" loading="eager" decoding="async" fetchpriority="high" />
+        <video class="hero-pan absolute inset-0 hidden h-full w-full -translate-y-12 scale-110 object-cover object-center brightness-[0.72] saturate-50 contrast-95 sm:block" autoplay muted loop playsinline preload="metadata" poster="images/museum.jpg" aria-hidden="true" tabindex="-1">
           <source src="video/Video Project.mp4" type="video/mp4" />
         </video>
         <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-black/75" aria-hidden="true"></div>
 
-        <div class="relative z-10 mx-auto w-full max-w-4xl px-4 pt-20 pb-12">
+        <div class="relative z-10 mx-auto w-full max-w-4xl px-4 pt-16 pb-10 text-center sm:pt-20 sm:pb-12 sm:text-left">
           <h1 class="font-serif leading-tight">
             <span class="block text-[clamp(2.3rem,5.6vw,4.9rem)] font-bold tracking-tight text-white drop-shadow-[0_14px_28px_rgba(0,0,0,0.24)]">Muzeul de Istorie și Etnografie</span>
           </h1>
 
-          <p class="mt-8 max-w-[58ch] text-base leading-relaxed text-white/80 sm:text-lg">Descoperiți povești, artefacte și expoziții interactive care readuc la viață trecutul municipiului Bălți.</p>
+          <p class="mt-6 max-w-[58ch] text-base leading-relaxed text-white/80 sm:mt-8 sm:text-lg">Descoperiți povești, artefacte și expoziții interactive care readuc la viață trecutul municipiului Bălți.</p>
 
-          <div class="mt-6 flex flex-wrap gap-3">
+          <div class="mt-6 flex flex-wrap justify-center gap-3 sm:justify-start">
             <a class="group inline-flex items-center gap-2 rounded-md border border-white/20 bg-gradient-to-br from-[#9a6a45] to-[#7b5234] px-5 py-3 font-semibold text-white shadow-lg shadow-black/25 transition hover:-translate-y-0.5" href="#exponatele">
               Explorează expozițiile noastre
               <span class="transition-transform group-hover:translate-x-0.5">→</span>
@@ -181,16 +199,16 @@
         </div>
       </section>
 
-      <section class="bg-museum-sand py-20" id="exponatele" aria-labelledby="exhibitions-title">
+      <section class="bg-museum-sand py-14 sm:py-20" id="exponatele" aria-labelledby="exhibitions-title">
         <div class="mx-auto max-w-6xl px-4">
           <div class="mb-10">
             <h2 class="text-[clamp(1.45rem,2.3vw,2rem)] font-extrabold text-[#1f1a15]" id="exhibitions-title">Expozițiile noastre</h2>
             <p class="mt-4 text-justify leading-relaxed text-[#5e5650]">În fiecare an, Muzeul de Istorie și Etnografie din Bălți organizează expoziții captivante care explorează trecutul și patrimoniul local din nordul țării. Vă îndemnăm să vizitați muzeul pentru a trăi aceste momente istorice într-un cadru interactiv și educațional.</p>
           </div>
 
-          <div class="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4">
-            <a class="flex w-[clamp(270px,30vw,360px)] flex-none snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:shadow-xl" href="#despre" aria-label="Detalii expoziție: Tradiții și meșteșuguri">
-              <img class="h-48 w-full object-cover" src="images/expozitii/madona1_expo.jpg" alt="Expoziție viitoare despre tradiții și meșteșuguri" />
+          <div class="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pl-4 pr-4 sm:gap-4 sm:px-0">
+            <a class="flex w-[min(86vw,320px)] flex-none snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:shadow-xl sm:w-[clamp(270px,30vw,360px)]" href="#despre" aria-label="Detalii expoziție: Tradiții și meșteșuguri">
+              <img class="h-48 w-full object-cover" src="images/expozitii/madona1_expo.jpg" alt="Expoziție viitoare despre tradiții și meșteșuguri" loading="lazy" decoding="async" />
               <div class="flex flex-1 flex-col gap-2 px-4 py-4">
                 <h3 class="text-base font-extrabold leading-snug text-[#1f1a15]">Vernisaj de expoziție: Madona din Ordășei</h3>
                 <p class="text-sm leading-relaxed text-[#5e5650]">O incursiune în descoperirile arheologice ale tumulului 20 de la Ordășei</p>
@@ -198,8 +216,8 @@
               </div>
             </a>
 
-            <a class="flex w-[clamp(270px,30vw,360px)] flex-none snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:shadow-xl" href="#vizite" aria-label="Detalii expoziție: Deportarile sovietice din 1940">
-              <img class="h-48 w-full object-cover" src="images/expozitii/exhib.jpg" alt="Expoziție temporară de patrimoniu local" />
+            <a class="flex w-[min(86vw,320px)] flex-none snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:shadow-xl sm:w-[clamp(270px,30vw,360px)]" href="#vizite" aria-label="Detalii expoziție: Deportarile sovietice din 1940">
+              <img class="h-48 w-full object-cover" src="images/expozitii/exhib.jpg" alt="Expoziție temporară de patrimoniu local" loading="lazy" decoding="async" />
               <div class="flex flex-1 flex-col gap-2 px-4 py-4">
                 <h3 class="text-base font-extrabold leading-snug text-[#1f1a15]">Colecții și memorii ale victimelor deportărilor anului 1940</h3>
                 <p class="text-sm leading-relaxed text-[#5e5650]">Colecții de obiecte și mărturii ale victimelor deportărilor sovietice.</p>
@@ -207,8 +225,8 @@
               </div>
             </a>
 
-            <a class="flex w-[clamp(270px,30vw,360px)] flex-none snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:shadow-xl" href="#vizite" aria-label="Detalii expoziție: Istoria urbană a Bălțiului">
-              <img class="h-48 w-full object-cover" src="images/expozitii/urbanism_expo.jpg" alt="Expoziție despre istoria urbană a municipiului Bălți" />
+            <a class="flex w-[min(86vw,320px)] flex-none snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:shadow-xl sm:w-[clamp(270px,30vw,360px)]" href="#vizite" aria-label="Detalii expoziție: Istoria urbană a Bălțiului">
+              <img class="h-48 w-full object-cover" src="images/expozitii/urbanism_expo.jpg" alt="Expoziție despre istoria urbană a municipiului Bălți" loading="lazy" decoding="async" />
               <div class="flex flex-1 flex-col gap-2 px-4 py-4">
                 <h3 class="text-base font-extrabold leading-snug text-[#1f1a15]">Urbanism și planificare - 180 ani de la primul plan arhitectural al orașului.</h3>
                 <p class="text-sm leading-relaxed text-[#5e5650]">Descoperiți evoluția planurilor de urbanism și planificare în Bălți.</p>
@@ -216,8 +234,8 @@
               </div>
             </a>
 
-            <a class="flex w-[clamp(270px,30vw,360px)] flex-none snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:shadow-xl" href="#despre" aria-label="Detalii expoziție: Epoca modernă">
-              <img class="h-48 w-full object-cover" src="images/expozitii/epoca_moderna_expo.jpg" alt="Expoziție foto de patrimoniu și etnografie" />
+            <a class="flex w-[min(86vw,320px)] flex-none snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:shadow-xl sm:w-[clamp(270px,30vw,360px)]" href="#despre" aria-label="Detalii expoziție: Epoca modernă">
+              <img class="h-48 w-full object-cover" src="images/expozitii/epoca_moderna_expo.jpg" alt="Expoziție foto de patrimoniu și etnografie" loading="lazy" decoding="async" />
               <div class="flex flex-1 flex-col gap-2 px-4 py-4">
                 <h3 class="text-base font-extrabold leading-snug text-[#1f1a15]">Descoperiți Bălțiul de seară din epoca modernă</h3>
                 <p class="text-sm leading-relaxed text-[#5e5650]">Expoziție cu fotografii și obiecte care reflectă viața de seară în Bălțiul modern.</p>
@@ -228,19 +246,19 @@
         </div>
       </section>
 
-      <section class="bg-museum-cream py-20" id="despre" aria-labelledby="mission-title">
+      <section class="bg-museum-cream py-14 sm:py-20" id="despre" aria-labelledby="mission-title">
         <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
           <div class="group relative min-h-[320px] overflow-hidden rounded-xl border border-black/10 bg-museum-accent2 shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:shadow-xl" aria-hidden="true">
             <div class="absolute inset-0">
-              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/excursie.jpg" alt="" />
-              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/excursie2.jpg" alt="" />
-              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/excursie3.jpg" alt="" />
-              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/excursie_1.jpg" alt="" />
-              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/exponate.jpg" alt="" />
-              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/masurare.jpg" alt="" />
-              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/proiect.jpg" alt="" />
-              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/rezultate.jpg" alt="" />
-              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/semnare.jpg" alt="" />
+              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/excursie.jpg" alt="" loading="eager" decoding="async" />
+              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/excursie2.jpg" alt="" loading="lazy" decoding="async" />
+              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/excursie3.jpg" alt="" loading="lazy" decoding="async" />
+              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/excursie_1.jpg" alt="" loading="lazy" decoding="async" />
+              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/exponate.jpg" alt="" loading="lazy" decoding="async" />
+              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/masurare.jpg" alt="" loading="lazy" decoding="async" />
+              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/proiect.jpg" alt="" loading="lazy" decoding="async" />
+              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/rezultate.jpg" alt="" loading="lazy" decoding="async" />
+              <img class="mission-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-transform duration-500 group-hover:scale-105" src="images/muzeografi/semnare.jpg" alt="" loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -252,27 +270,27 @@
         </div>
       </section>
 
-      <section class="relative overflow-hidden bg-museum-sand py-16" id="vizite" aria-labelledby="visits-title">
+      <section class="relative overflow-hidden bg-museum-sand py-14 sm:py-16" id="vizite" aria-labelledby="visits-title">
         <figure class="exponat-reveal group absolute bottom-4 left-[max(0.9rem,calc((100vw-1100px)/2+1rem))] z-10 hidden max-w-[220px] opacity-0 lg:block" style="animation-delay: 0.9s;">
-          <img class="block w-full animate-[coinTilt_26s_ease-in-out_infinite]" src="images/exponate/moneda_anim.png" alt="Monedă istorică din colecția muzeului" />
+          <img class="block w-full animate-[coinTilt_26s_ease-in-out_infinite]" src="images/exponate/moneda_anim.png" alt="Monedă istorică din colecția muzeului" loading="lazy" decoding="async" />
           <figcaption class="pointer-events-none absolute left-[calc(100%+0.55rem)] top-1/2 w-[230px] -translate-x-1 -translate-y-1/2 rounded-lg bg-[#1f1a15] px-2.5 py-2 text-xs leading-relaxed text-white opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100">Monedă istorică: descoperită în nordul Moldovei, sec. XIX.</figcaption>
         </figure>
         <figure class="exponat-reveal group absolute top-52 left-[calc(max(0.9rem,calc((100vw-1100px)/2+1rem))+7rem)] z-10 hidden max-w-[240px] opacity-0 lg:block" style="animation-delay: 1.35s;">
-          <img class="block w-full animate-[earringTilt_18s_ease-in-out_infinite]" src="images/exponate/cercei_anim.png" alt="Pereche de cercei de epocă" />
+          <img class="block w-full animate-[earringTilt_18s_ease-in-out_infinite]" src="images/exponate/cercei_anim.png" alt="Pereche de cercei de epocă" loading="lazy" decoding="async" />
           <figcaption class="pointer-events-none absolute left-[calc(100%+0.55rem)] top-1/2 w-[230px] -translate-x-1 -translate-y-1/2 rounded-lg bg-[#1f1a15] px-2.5 py-2 text-xs leading-relaxed text-white opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100">Cercei de epocă: piesă decorativă restaurată din colecția etnografică.</figcaption>
         </figure>
         <div class="mx-auto grid max-w-6xl items-start gap-8 px-4 lg:grid-cols-2">
           <div class="max-w-[62ch]">
             <h2 class="text-[clamp(1.35rem,2.1vw,1.85rem)] font-extrabold text-[#1f1a15]" id="visits-title">Planifică vizita ta</h2>
-            <p class="mt-3 leading-relaxed text-[#5e5650]">Completează formularul de alături, iar echipa muzeului te va contacta pentru confirmarea detaliilor vizitei.</p>
+            <p class="mt-3 hidden leading-relaxed text-[#5e5650] md:block">Completează formularul de alături, iar echipa muzeului te va contacta pentru confirmarea detaliilor vizitei.</p>
           </div>
 
           <section class="grid gap-3 rounded-xl border border-black/10 bg-white p-4 shadow-lg shadow-black/10 md:hidden" aria-labelledby="mobile-spotlight-title">
             <p class="text-base leading-relaxed text-[#5e5650]">Cu ajutorul telefonului mobil, poți ajunge rapid la secțiunile importante și poți rezerva vizita dintr-un singur tap.</p>
-            <img class="h-[170px] w-full rounded-lg border border-black/10 object-cover" src="images/muzeografi/excursie_1.jpg" alt="Vizitatori în muzeu" />
+            <img class="h-[170px] w-full rounded-lg border border-black/10 object-cover" src="images/muzeografi/excursie_1.jpg" alt="Vizitatori în muzeu" loading="lazy" decoding="async" />
           </section>
 
-          <form class="grid gap-4 rounded-xl border border-black/10 bg-white p-4 shadow-lg shadow-black/10 lg:grid-cols-2" id="visit-form" action="" method="post">
+          <form class="grid gap-4 rounded-xl border border-black/10 bg-white p-4 shadow-lg shadow-black/10 lg:grid-cols-2 lg:self-start" id="visit-form" action="" method="post">
             <div class="flex flex-col gap-1.5 lg:col-span-2">
               <label class="text-sm font-bold text-[#1f1a15]" for="visitor-name">Nume și prenume vizitator/organizator</label>
               <input class="w-full rounded-lg border border-black/20 px-3 py-2 text-[#1f1a15] focus:border-black/40 focus:outline-none focus:ring-4 focus:ring-black/10" id="visitor-name" name="visitor-name" type="text" required />
@@ -319,7 +337,7 @@
         </div>
       </section>
 
-      <section class="bg-museum-cream py-16" id="gasesti" aria-labelledby="find-us-title">
+      <section class="bg-museum-cream py-14 sm:py-16" id="gasesti" aria-labelledby="find-us-title">
         <div class="mx-auto max-w-6xl px-4">
           <h2 class="mb-4 text-[clamp(1.35rem,2.1vw,1.85rem)] font-extrabold text-[#1f1a15]" id="find-us-title">Cum să ne găsești?</h2>
           <div class="grid gap-8 lg:grid-cols-2">
@@ -335,8 +353,12 @@
 
               <div class="rounded-xl border border-black/10 bg-white p-4 shadow-lg shadow-black/10">
                 <h3 class="mb-3 text-base font-extrabold text-[#1f1a15]">Locație</h3>
-                <p class="text-[#5e5650]">Strada Ștefan cel Mare, 82, Bălți, Republica Moldova</p>
-                <p class="mt-2 text-[#5e5650]">Telefon: +373 231 00 000</p>
+                <div class="space-y-1 text-[#5e5650]">
+                  <p>Strada Ștefan cel Mare, 82, Bălți, Republica Moldova</p>
+                  <p>Acces: intrarea principală este din curte, cu acces facil pentru orice vizitator.</p>
+                  <p>Transport: troleibusele: 10, 1. autobusul: 101.</p>
+                  <p>Telefon: +373 231 00 000</p>
+                </div>
               </div>
             </div>
 
