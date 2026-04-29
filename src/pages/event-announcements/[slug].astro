@@ -1,0 +1,72 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("event_announcements");
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, date, description } = entry.data;
+const dateLabel = date.toLocaleDateString("ro-RO", {
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+});
+---
+
+<Layout title={`${title} · Evenimente`}>
+  <main class="bg-museum-bg pb-16">
+    <div class="border-b border-black/10 bg-museum-sand/80">
+      <div class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-3 px-4 py-4">
+        <a class="text-sm font-semibold text-[#7b5234] hover:underline" href="/event-announcements">← Toate anunțurile</a>
+        <a class="text-sm font-semibold text-[#7b5234] hover:underline" href="/">Acasă</a>
+      </div>
+    </div>
+
+    <article class="mx-auto max-w-3xl px-4 py-10">
+      <header class="mb-8">
+        <p class="text-sm font-semibold text-[#7b5234]">{dateLabel}</p>
+        <h1 class="mt-2 text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold leading-tight text-[#1f1a15]">{title}</h1>
+        <p class="mt-4 leading-relaxed text-[#5e5650]">{description}</p>
+      </header>
+      <div class="content-doc space-y-4 leading-relaxed text-[#1f1a15]">
+        <Content />
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style is:global>
+  .content-doc h2 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1f1a15;
+  }
+  .content-doc h3 {
+    margin-top: 1.25rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1f1a15;
+  }
+  .content-doc p {
+    color: #5e5650;
+  }
+  .content-doc a {
+    color: #7b5234;
+    text-decoration: underline;
+  }
+  .content-doc ul {
+    margin-top: 0.5rem;
+    list-style: disc;
+    padding-left: 1.25rem;
+    color: #5e5650;
+  }
+</style>
