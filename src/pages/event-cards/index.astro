@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 
 const entries = await getCollection("event_cards");
 const sorted = entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const withBase = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
 ---
 
 <Layout title="Carduri evenimente · Muzeul de Istorie și Etnografie din Bălți">
@@ -11,7 +12,7 @@ const sorted = entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueO
     <div class="border-b border-black/10 bg-museum-sand/80">
       <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <h1 class="text-lg font-extrabold text-[#1f1a15]">Carduri evenimente</h1>
-        <a class="text-sm font-semibold text-[#7b5234] hover:underline" href="/">Acasă</a>
+        <a class="text-sm font-semibold text-[#7b5234] hover:underline" href={withBase("/")}>Acasă</a>
       </div>
     </div>
 
@@ -30,9 +31,9 @@ const sorted = entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueO
               <li>
                 <a
                   class="flex h-full flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:shadow-xl"
-                  href={`/event-cards/${entry.id}`}
+                  href={withBase(`/event-cards/${entry.id}`)}
                 >
-                  <img class="h-44 w-full object-cover" src={entry.data.image} alt="" loading="lazy" decoding="async" />
+                  <img class="h-44 w-full object-cover" src={withBase(entry.data.image)} alt="" loading="lazy" decoding="async" />
                   <div class="flex flex-1 flex-col gap-2 p-4">
                     <p class="text-xs font-semibold text-[#7b5234]">{d}</p>
                     <h2 class="text-base font-extrabold leading-snug text-[#1f1a15]">{entry.data.title}</h2>

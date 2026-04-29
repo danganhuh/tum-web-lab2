@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 
 const entries = await getCollection("articles");
 const sorted = entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const withBase = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
 ---
 
 <Layout title="Articole · Muzeul de Istorie și Etnografie din Bălți">
@@ -11,7 +12,7 @@ const sorted = entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueO
     <div class="border-b border-black/10 bg-museum-sand/80">
       <div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
         <h1 class="text-lg font-extrabold text-[#1f1a15]">Articole</h1>
-        <a class="text-sm font-semibold text-[#7b5234] hover:underline" href="/">Acasă</a>
+        <a class="text-sm font-semibold text-[#7b5234] hover:underline" href={withBase("/")}>Acasă</a>
       </div>
     </div>
 
@@ -28,7 +29,7 @@ const sorted = entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueO
             });
             return (
               <li class="py-6">
-                <a class="group block" href={`/articles/${entry.id}`}>
+                <a class="group block" href={withBase(`/articles/${entry.id}`)}>
                   <p class="text-xs font-semibold text-[#7b5234]">{d}</p>
                   <h2 class="mt-1 text-base font-extrabold text-[#1f1a15] group-hover:text-[#7b5234]">{entry.data.title}</h2>
                   <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-[#5e5650]">{entry.data.description}</p>
