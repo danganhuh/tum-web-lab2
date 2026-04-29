@@ -25,9 +25,10 @@ media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
-site_url: https://danganhuh.github.io
+site_url: https://danganhuh.github.io/tum-web-lab2
+display_url: https://danganhuh.github.io/tum-web-lab2
 
-publish_mode: editorial_workflow
+publish_mode: simple
 
 collections:
   - name: articles
