@@ -18,14 +18,15 @@ const dateLabel = date.toLocaleDateString("ro-RO", {
   month: "long",
   day: "numeric"
 });
+const withBase = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
 ---
 
 <Layout title={`${title} · Articole`}>
   <main class="bg-museum-bg pb-16">
     <div class="border-b border-black/10 bg-museum-sand/80">
       <div class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-3 px-4 py-4">
-        <a class="text-sm font-semibold text-[#7b5234] hover:underline" href="/articles">← Toate articolele</a>
-        <a class="text-sm font-semibold text-[#7b5234] hover:underline" href="/">Acasă</a>
+        <a class="text-sm font-semibold text-[#7b5234] hover:underline" href={withBase("/articles")}>← Toate articolele</a>
+        <a class="text-sm font-semibold text-[#7b5234] hover:underline" href={withBase("/")}>Acasă</a>
       </div>
     </div>
 
