@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Astro build output and generated types
+dist/
+.astro/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment (secrets / local overrides)
+.env
+.env.*
+!.env.example
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.local
+
+# Optional: uncomment if you do not want IDE settings in the repo
+# .vscode/
+# .idea/
+
+# Project-specific
+/history-museum
