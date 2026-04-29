@@ -1,0 +1,157 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title = "Muzeul de Istorie și Etnografie din Bălți" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+    <script is:inline>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              museum: {
+                bg: "#faf7f2",
+                ink: "#222222",
+                muted: "#6b6b6b",
+                accent: "#8b5e3c",
+                accent2: "#d9c7b1",
+                sand: "#efe4d3",
+                cream: "#f6efe4"
+              }
+            },
+            fontFamily: {
+              sans: ["Manrope", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial"]
+            }
+          }
+        }
+      };
+    </script>
+    <style is:global>
+      @keyframes heroPan {
+        0% {
+          transform: translateY(-50px) scale(1.14) translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translateY(-53px) scale(1.16) translate3d(-0.45%, 0, 0);
+        }
+      }
+
+      .hero-pan {
+        animation: heroPan 42s ease-in-out infinite alternate;
+      }
+
+      @keyframes missionFade {
+        0% {
+          opacity: 0;
+        }
+        2% {
+          opacity: 1;
+        }
+        9% {
+          opacity: 1;
+        }
+        11% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      .mission-slide {
+        animation: missionFade 54s infinite;
+      }
+
+      .mission-slide:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .mission-slide:nth-child(2) {
+        animation-delay: 6s;
+      }
+      .mission-slide:nth-child(3) {
+        animation-delay: 12s;
+      }
+      .mission-slide:nth-child(4) {
+        animation-delay: 18s;
+      }
+      .mission-slide:nth-child(5) {
+        animation-delay: 24s;
+      }
+      .mission-slide:nth-child(6) {
+        animation-delay: 30s;
+      }
+      .mission-slide:nth-child(7) {
+        animation-delay: 36s;
+      }
+      .mission-slide:nth-child(8) {
+        animation-delay: 42s;
+      }
+      .mission-slide:nth-child(9) {
+        animation-delay: 48s;
+      }
+
+      @keyframes exponatReveal {
+        to {
+          opacity: 0.95;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .exponat-reveal {
+        animation: exponatReveal 1.2s ease forwards;
+      }
+
+      @keyframes coinTilt {
+        0%,
+        100% {
+          transform: rotate(-3deg);
+        }
+        50% {
+          transform: rotate(3deg);
+        }
+      }
+
+      @keyframes earringTilt {
+        0%,
+        100% {
+          transform: rotate(-4deg);
+        }
+        50% {
+          transform: rotate(4deg);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-pan {
+          animation: none;
+        }
+
+        .mission-slide {
+          animation: none;
+          opacity: 1;
+        }
+
+        .exponat-reveal {
+          animation: none;
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-museum-bg pb-24 font-sans text-museum-ink antialiased md:pb-0">
+    <slot />
+  </body>
+</html>
