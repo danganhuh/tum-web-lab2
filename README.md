@@ -9,17 +9,20 @@ The page presents exhibitions, museum information, and clear call-to-action area
 
 ## Screenshots
 
-![Homepage screenshot](images/report_images/opening.png)
-![Exhibitions](images/report_images/exhibitions.png)
-![About us section](images/report_images/about-us.png)
-![Visit us section](images/report_images/vizit-us.png)
+![Homepage screenshot](public/images/report_images/opening.png)
+![Exhibitions](public/images/report_images/exhibitions.png)
+![About us section](public/images/report_images/about-us.png)
+![Visit us section](public/images/report_images/vizit-us.png)
 
 ## Tech Stack
 
-- HTML5
-- CSS3 (vanilla CSS)
+- [Astro](https://astro.build/) (static site generation)
+- HTML + [Tailwind CSS](https://tailwindcss.com/) (via CDN in the layout)
 
 ## Local Run
 
 1. Clone the repository.
-2. Open `index.html` in your browser.
+2. Install dependencies: `npm install`
+3. Development server: `npm run dev`
+4. Production build: `npm run build` (output in `dist/`)
+5. Preview the build: `npm run preview`
