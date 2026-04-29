@@ -1,11 +1,5 @@
 backend:
-  name: github
-  repo: danganhuh/tum-web-lab2
-  branch: master
-  # GitHub OAuth provider used by Decap CMS.
-  # Replace with your own OAuth proxy if you do not use decapbridge.com.
-  base_url: https://oauth.decapbridge.com
-  auth_endpoint: /auth
+  name: test-repo
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
