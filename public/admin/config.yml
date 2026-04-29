@@ -9,13 +9,95 @@ public_folder: "/images/uploads"
 publish_mode: editorial_workflow
 
 collections:
-  - name: "site_content"
-    label: "Site Content"
-    folder: "src/content/site"
+  - name: articles
+    label: Articles
+    label_singular: Article
+    folder: "src/content/articles"
     create: true
-    slug: "{{slug}}"
-    extension: "md"
-    format: "frontmatter"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: md
+    format: frontmatter
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: Title
+        name: title
+        widget: string
+        required: true
+      - label: Date
+        name: date
+        widget: datetime
+        required: true
+        date_format: YYYY-MM-DD
+        time_format: false
+      - label: Description
+        name: description
+        widget: text
+        required: true
+      - label: Body
+        name: body
+        widget: markdown
+        required: true
+
+  - name: event_announcements
+    label: Event announcements
+    label_singular: Event announcement
+    folder: "src/content/event-announcements"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        required: true
+      - label: Date
+        name: date
+        widget: datetime
+        required: true
+        date_format: YYYY-MM-DD
+        time_format: false
+      - label: Description
+        name: description
+        widget: text
+        required: true
+      - label: Body
+        name: body
+        widget: markdown
+        required: true
+
+  - name: event_cards
+    label: Event cards
+    label_singular: Event card
+    folder: "src/content/event-cards"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - label: Photo
+        name: image
+        widget: image
+        required: true
+      - label: Title
+        name: title
+        widget: string
+        required: true
+      - label: Date
+        name: date
+        widget: datetime
+        required: true
+        date_format: YYYY-MM-DD
+        time_format: false
+      - label: Description
+        name: description
+        widget: text
+        required: true
+      - label: Body
+        name: body
+        widget: markdown
+        required: true
+      - label: Link to event page
+        name: link
+        widget: string
+        required: true
+        hint: "Path to the full event announcement, e.g. /event-announcements/2026-04-29-my-event-slug (use the filename without .md)."
