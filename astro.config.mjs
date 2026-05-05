@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import { rehypeAssetBase } from "./rehype-asset-base.mjs";
 
 const isProductionBuild = process.env.NODE_ENV === "production";
 const base = process.env.BASE_PATH ?? (isProductionBuild ? "/tum-web-lab2" : "/");
@@ -7,5 +8,8 @@ const base = process.env.BASE_PATH ?? (isProductionBuild ? "/tum-web-lab2" : "/"
 export default defineConfig({
   site: "https://danganhuh.github.io/tum-web-lab2",
   base,
-  output: "static"
+  output: "static",
+  markdown: {
+    rehypePlugins: [[rehypeAssetBase, { base }]]
+  }
 });
