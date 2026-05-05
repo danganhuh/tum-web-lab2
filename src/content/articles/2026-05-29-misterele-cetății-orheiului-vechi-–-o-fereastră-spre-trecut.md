@@ -10,7 +10,7 @@ Primele urme de locuire datează din perioada antică, când triburile geto-daci
 
 Ulterior, în perioada medievală, cetatea a fost preluată și dezvoltată de domnitorii Moldovei, fiind menționată în documente istorice din timpul lui Ștefan cel Mare.
 
-![image](/images/uploads/cuttingservopoweredit.jpg "image")
+![desert](/images/uploads/9.-пустыня.jpg "desert")
 
 Unul dintre cele mai impresionante elemente ale sitului este mănăstirea săpată în stâncă, care continuă să fie utilizată și astăzi. Aceasta reflectă tradițiile religioase ortodoxe și adaptarea comunităților monahale la mediul natural.
 
