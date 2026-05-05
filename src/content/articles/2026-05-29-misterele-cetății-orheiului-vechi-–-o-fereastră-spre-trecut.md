@@ -11,3 +11,25 @@ Primele urme de locuire datează din perioada antică, când triburile geto-daci
 Ulterior, în perioada medievală, cetatea a fost preluată și dezvoltată de domnitorii Moldovei, fiind menționată în documente istorice din timpul lui Ștefan cel Mare.
 
 ![](/images/uploads/9.-пустыня.jpg)
+
+
+
+Unul dintre cele mai impresionante elemente ale sitului este mănăstirea săpată în stâncă, care continuă să fie utilizată și astăzi. Aceasta reflectă tradițiile religioase ortodoxe și adaptarea comunităților monahale la mediul natural.
+
+Vizitatorii pot explora chiliile, biserica rupestră și pot admira panorama spectaculoasă a văii Răutului.
+
+Săpăturile arheologice au scos la iveală:
+
+Săpăturile arheologice au scos la iveală:
+
+
+
+ceramică decorativă specifică epocii medievale
+
+monede din perioada Hoardei de Aur
+
+unelte agricole și obiecte de uz cotidian
+
+
+
+Aceste artefacte oferă o imagine detaliată asupra vieții economice și sociale din acea perioadă.Aceste artefacte oferă o imagine detaliată asupra vieții economice și sociale din acea perioadă.
